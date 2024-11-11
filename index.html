@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouret - Graphic Studio</title>
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            color: #4a4a4a;
+            background-color: #f8f4eb;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: #f8f4eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            border-bottom: 1px solid #c2b097;
+            transition: background-color 0.3s ease;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #4a4a4a;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #a88c6d;
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('path/to/hero-image.jpg') no-repeat center center/cover;
+            color: #4a4a4a;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        #hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #4a4a4a;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #7a7a7a;
+        }
+
+        /* About Section */
+        #about {
+            padding: 100px 50px;
+            text-align: center;
+            background-color: #f8f4eb;
+        }
+
+        #about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #4a4a4a;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #7a7a7a;
+        }
+
+        #about img {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            border-radius: 10px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        #about img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Divider Line */
+        .divider-line {
+            width: 60%;
+            height: 2px;
+            background-color: #c2b097;
+            margin: 40px auto;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 100px 50px;
+            background-color: #f2ede4;
+            text-align: center;
+        }
+
+        #services h2 {
+            font-size: 2.5rem;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+
+        .service-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-card .card {
+            background-color: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            width: 250px;
+            transition: transform 0.3s ease;
+            border: 1px solid #c2b097;
+        }
+
+        .service-card .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #7a7a7a;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 100px 50px;
+            text-align: center;
+            background-color: #f8f4eb;
+        }
+
+        #contact h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            color: #7a7a7a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4a4a4a;
+            color: #f2ede4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        footer .social-links a {
+            color: #f2ede4;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        footer .social-links a:hover {
+            color: #c2b097;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Mouret</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to Mouret</h2>
+        <p>A graphic design studio born from a passion for creating impactful and memorable visual experiences.</p>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Mouret embodies simplicity and elegance, a name inspired by calm and flow—like the gentle waves of the sea. Our mission is to bring that same sense of calm to every project we work on.</p>
+        <p>We cater to various industries including fashion, beauty, hospitality, food, retail, and more, aiming to create unique visual identities that resonate.</p>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <div class="card">
+                <h3>Star Package One</h3>
+                <p>Comprehensive brand strategy including logos, color palette, typography, and brand guidelines.</p>
+            </div>
+            <div class="card">
+                <h3>Star Package Two</h3>
+                <p>Brand development plus social media assets and caption guidelines for a cohesive online presence.</p>
+            </div>
+            <div class="card">
+                <h3>Individual Services</h3>
+                <p>Customized logos, digital invitations, packaging design, and more to fit your unique needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:mouret.ink@gmail.com">mouret.ink@gmail.com</a></p>
+        <p>Follow us on Instagram: <a href="https://www.instagram.com/mouret.ink" target="_blank">mouret.ink</a></p>
+    </section>
+
